@@ -9,19 +9,28 @@ import { AddressType } from "../../../Constants/Types/address";
 
 const AddressCardList = () => {
     const addressData: AddressType[] = ((data as any).addresses as AddressType[]).map((d) => {
-        d.default = true
+        d.default = true;
+        d.show = false;
         return d
     })
 
-    console.log("----> ", addressData)
+    const [addressInfo, setAddressInfo] = React.useState<AddressType[]>(addressData);
+
+    const onShow = (id: number) => {
+        addressInfo.forEach(add => {
+
+        })
+    }
+
+
 
     return (
         <Styles.Container>
             <Styles.List>
-                {addressData && addressData.length ? (
-                    addressData.map((address: any) => (
+                {addressInfo && addressInfo.length ? (
+                    (addressInfo as AddressType[]).map((address) => (
                         <Styles.Item>
-                            <AddressCard addressInfo={address} />
+                            <AddressCard addressInfo={address} onShow={onShow} />
                         </Styles.Item>
                     ))
                 ) : (

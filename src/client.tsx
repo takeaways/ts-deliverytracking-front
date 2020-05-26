@@ -5,6 +5,7 @@ import * as ReactRedux from 'react-redux';
 import * as Redux from "redux";
 
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { ModalProvider } from 'styled-react-modal';
 
 import GoogleFontLoader from 'react-google-font-loader';
 import { GlobalStyle } from './Modules/Styled/GlobalStyles';
@@ -34,7 +35,9 @@ ReactDom.render(
         />
         <GlobalStyle />
         <ReactRedux.Provider store={store}>
-            <Hot />
+            <ModalProvider>
+                <Hot />
+            </ModalProvider>
         </ReactRedux.Provider>
     </>
     , document.querySelector('#root'));

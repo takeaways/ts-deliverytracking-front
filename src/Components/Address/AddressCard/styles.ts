@@ -21,11 +21,11 @@ export const Card = styled.div`
 	height: 85px;
 `;
 export const CardRight = styled.div`
+	padding-right: 20px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: flex-start;
-	padding-left: 20px;
+	align-items: center;
+
+	position: relative;
 `;
 export const CardZip = styled.span`
 	font-size: 16px;
@@ -53,22 +53,41 @@ export const CardAddress = styled.span`
 `;
 
 export const CardLeft = styled.div`
-	padding-right: 20px;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	padding-left: 20px;
 `;
 export const CardSetBtn = styled.span`
-	display: block;
-	text-align: center;
 	font-size: 26px;
 	width: 26px;
 	height: 26px;
 	border: 1px solid #e1e1e1;
 	border-radius: 50%;
 	background-color: #ffffff;
+	color: #5e5e5e;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	&:hover {
 		cursor: pointer;
-		background-color: #3e3e3e;
-		color: white;
+		color: #3e3e3e;
 	}
+`;
+
+export const CardSet = styled.div`
+	width: 166px;
+	height: 100px;
+	border-radius: 4px;
+	box-shadow: 2px 2px 3px 0 rgba(122, 122, 122, 0.5);
+	border: solid 1px #cdcdcd;
+	background-color: #ffffff;
+
+	position: absolute;
+	top: 80%;
+	right: 50%;
+	z-index: 1;
 `;

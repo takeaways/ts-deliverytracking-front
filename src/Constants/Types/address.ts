@@ -3,5 +3,6 @@ export interface AddressType {
 	postnumber: number;
 	name: string;
 	address: string;
-	default: boolean;
+	default?: boolean;
+	show?: boolean;
 }
