@@ -1,8 +1,7 @@
 export interface AddressType {
 	id?: number;
-	postnumber: number;
-	name: string;
-	address: string;
+	postnumber?: number;
+	name?: string;
+	address?: string;
 	default?: boolean;
-	show?: boolean;
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components"
-import { useToggleLayer, anchor } from "react-laag";
+import {useToggleLayer, anchor} from "react-laag";
 import Menubar from "./Menubar";
 
 export interface DropdownProps {
@@ -23,10 +23,7 @@ const Container = styled.span`
     display: inline-block;
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ items, children, size, width }) => {
-
-    console.log("----->", width)
-
+const Dropdown: React.FC<DropdownProps> = ({items, children, size, width}) => {
     const [element, toggleLayerProps] = useToggleLayer(
         (props) => props.isOpen && (
             <div {...props.layerProps}>
@@ -45,26 +42,26 @@ const Dropdown: React.FC<DropdownProps> = ({ items, children, size, width }) => 
                         );
                     })}
                 </Menubar>
-            </div >
+            </div>
         ), {
-        placement: {
-            anchor: anchor.BOTTOM_RIGHT
-            // ? anchor.BOTTOM_LEFT
-            // : bottomRight
-            // ? anchor.BOTTOM_RIGHT
-            // : anchor.BOTTOM_CENTER,
-        },
-        closeOnOutsideClick: true,
-    })
+            placement: {
+                anchor: anchor.BOTTOM_RIGHT
+                // ? anchor.BOTTOM_LEFT
+                // : bottomRight
+                // ? anchor.BOTTOM_RIGHT
+                // : anchor.BOTTOM_CENTER,
+            },
+            closeOnOutsideClick: true,
+        });
 
     return (
         <Container>
             {element}
-            < div onClick={toggleLayerProps.openFromMouseEvent} >
+            < div onClick={toggleLayerProps.openFromMouseEvent}>
                 <span className="icon" onClick={toggleLayerProps.close}>{children}</span>
-            </div >
+            </div>
         </Container>
     )
-}
+};
 
 export default Dropdown;

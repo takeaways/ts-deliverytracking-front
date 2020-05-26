@@ -8,22 +8,33 @@ import * as Styles from "./styles";
 import Dropdown from "../../../Modules/Styled/Dropdown";
 
 
-const AddressCard: React.FC<{ addressInfo: AddressType, onShow: (id: number) => void }> = ({ addressInfo, onShow }) => {
+interface AddressCardProps {
+    addressInfo: AddressType,
+    onClickMenu: (type: string, id: number) => void;
+    onToast:()=>void;
+    onClose:()=>void;
+}
+
+const AddressCard: React.FC<AddressCardProps> = ({ addressInfo,onClickMenu, onToast, onClose }) => {
 
     const menus: any = [
         {
-            name: "삭제하기",
+            name: "기본 배송지 설정",
             onClick: (props: any, name: string, index: number) => {
                 console.log([props, name, index]);
+                onToast();
+                onClickMenu("setDefault", addressInfo.id!);
             }
         },
         {
-            name: "편집하기",
+            name: "삭제",
             onClick: (props: any, name: string, index: number) => {
                 console.log([props, name, index]);
+                onToast();
+                onClickMenu("delete", addressInfo.id!);
             }
         }
-    ]
+    ];
 
 
 
@@ -37,7 +48,7 @@ const AddressCard: React.FC<{ addressInfo: AddressType, onShow: (id: number) => 
                 <Styles.CardRight>
                     <Styles.CardSetBtn>
                         <Dropdown items={menus} width={168}>
-                            <MdMoreHoriz />
+                            <MdMoreHoriz onClick={onClose}/>
                         </Dropdown>
                     </Styles.CardSetBtn>
                 </Styles.CardRight>

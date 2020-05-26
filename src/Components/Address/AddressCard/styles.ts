@@ -59,7 +59,7 @@ export const CardLeft = styled.div`
 	align-items: flex-start;
 	padding-left: 20px;
 `;
-export const CardSetBtn = styled.span`
+export const CardSetBtn = styled.div`
 	font-size: 26px;
 	width: 26px;
 	height: 26px;
@@ -71,6 +71,12 @@ export const CardSetBtn = styled.span`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
+	& svg{
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	}
 
 	&:hover {
 		cursor: pointer;

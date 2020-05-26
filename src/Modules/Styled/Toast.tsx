@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import * as React from 'react';
 
 interface ToastType {
-    message: string,
-    duration?: number,
-    point?: number
+    message: string;
+    duration?: number;
+    point?: number;
+    onClose: () => void;
 }
 
 
@@ -54,22 +55,21 @@ const Text = styled.span`
   color: #ffffff;
 `;
 
-const Toast: React.FC<ToastType> = ({ message, duration = 3000, point = 50 }) => {
-    const toast = React.useRef<HTMLDivElement>(null);
-    const [show, setShow] = React.useState<boolean>(true);
+const Toast: React.FC<ToastType> = ({message, duration = 3000, point = 50, onClose}) => {
+
     React.useEffect(() => {
         const showTime = setTimeout(() => {
-            setShow(false)
-            // toast.current!.style.display = "hidden";
+            onClose();
         }, duration - 100);
         return () => {
-            clearTimeout(showTime)
+            clearTimeout(showTime);
         }
-    });
-    return (show ?
-        <Container ref={toast} duration={duration} point={point}>
-            <Text>{message}</Text>
-        </Container> : null
+    }, []);
+
+    return (
+            <Container duration={duration} point={point}>
+                <Text>{message}</Text>
+            </Container>
     )
 };
 

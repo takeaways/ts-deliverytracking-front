@@ -18,7 +18,7 @@ const Account = () => {
             <PageContainer>
                 <PageTitle>설정</PageTitle>
                 <HomeNavbar />
-                <Toast message={"Hello world"} point={80} />
+                {/*<Toast message={"Hello world"} point={80} />*/}
                 <div>
                     <button onClick={toggleModal}>Click me</button>
                     <Modal

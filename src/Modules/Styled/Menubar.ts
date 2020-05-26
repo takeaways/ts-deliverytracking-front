@@ -11,32 +11,39 @@ const Menubar = styled.div<MenubarProps>`
     position: relative;
     z-index: 14;
     width: ${(props) => {
-			console.log('ssss', props);
 			return props.width ? props.width : 168;
 		}}px;
-    box-shadow: 5px 5px 10px 0 rgba(212, 212, 212, 0.5);
-    border: solid 1px var(--pale-lilac);
+    
+    border: solid 1px #cdcdcd;
     background-color: #ffffff;
-
+    margin-top: 13px;
+	height: 100px;
+	border-radius: 4px;
+	box-shadow: 2px 2px 3px 0 rgba(122, 122, 122, 0.5);
+	  
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
     button {
+    
         display: block;
         width: 100%;
         border: 0;
-        background-color: #fff;
         text-align: left;
-        height: 30px;
+        height: 40px;
         padding: 0 9px;
         font-size: 12px;
         font-weight: normal;
         line-height: 1.33;
         letter-spacing: -0.5px;
-        color: var(--block);
+        color: #3e3e3e;
+        background-color: #ffffff;
 
         ${(props) =>
 					props.size &&
 					props.size === 'small' &&
 					`
-            height: 30px;
+            height: 40px;
             padding: 0 9px;
             font-size: 16px;
             font-weight: normal;
@@ -46,7 +53,7 @@ const Menubar = styled.div<MenubarProps>`
 					props.size &&
 					props.size === 'middle' &&
 					`
-            height: 32px;
+            height: 42px;
             padding: 0 12px;
             font-size: 18px;
             font-weight: normal;
@@ -56,14 +63,14 @@ const Menubar = styled.div<MenubarProps>`
 					props.size &&
 					props.size === 'large' &&
 					`
-            height: 36px;
+            height: 46px;
             padding: 3px 14px;
             font-size: 20px;
             font-weight: normal;
         `}
 
         &:hover {
-            background-color: #e9f1fe;
+            background-color: #f4f4f4;
         }
     }
 `;

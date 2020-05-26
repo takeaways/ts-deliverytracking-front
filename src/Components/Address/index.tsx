@@ -10,6 +10,7 @@ import AddressInfo from "./AddressInfo";
 
 
 const Address = () => {
+
     return (
         <ContentContainer>
             <Styles.ContentHeader>
@@ -18,7 +19,7 @@ const Address = () => {
             </Styles.ContentHeader>
             <Styles.Container>
                 <Styles.LeftContentBlock>
-                    <AddressCardList />
+                    <AddressCardList/>
                 </Styles.LeftContentBlock>
                 <Styles.RightContentBlock>
                     <AddressInfo />
