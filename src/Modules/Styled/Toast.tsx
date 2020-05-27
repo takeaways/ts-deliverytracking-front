@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import * as React from 'react';
 
 interface ToastType {
-    message: string;
-    duration?: number;
-    point?: number;
-    onClose: () => void;
+  message: string;
+  duration?: number;
+  point?: number;
+  onClose: () => void;
 }
 
 
@@ -21,30 +21,37 @@ const Container = styled.div<{ duration: number, point?: number }>`
   z-index: 1;
   left: calc(50% - 168px);
   bottom: ${props => props.point ? props.point : 40}%;
+
+
+  @media screen and (max-width: 360px) {
+		width: 328px;
+    left: calc(50% - 164px);
+	}
   
   @-webkit-keyframes fadein {
-      from {bottom: ${props => props.point ? props.point : 40}%; opacity: 0;} 
-      to {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;}
+    from {bottom: ${props => props.point ? props.point : 40}%; opacity: 0;} 
+    to {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;}
   }
 
-    @keyframes fadein {
-      from {bottom: ${props => props.point ? props.point : 40}%; opacity: 0;}
-      to {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;}
-    }
+  @keyframes fadein {
+    from {bottom: ${props => props.point ? props.point : 40}%; opacity: 0;}
+    to {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;}
+  }
 
-@-webkit-keyframes fadeout {
-  from {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;} 
-  to {bottom: calc(${props => props.point ? props.point : 40}%); opacity: 0;}
-}
+  @-webkit-keyframes fadeout {
+    from {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;} 
+    to {bottom: calc(${props => props.point ? props.point : 40}%); opacity: 0;}
+  }
 
-@keyframes fadeout {
-  from {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;}
-  to {bottom: calc(${props => props.point ? props.point : 40}% ); opacity: 0;}
-}
+  @keyframes fadeout {
+    from {bottom: calc(${props => props.point ? props.point : 40}% + 30px); opacity: 1;}
+    to {bottom: calc(${props => props.point ? props.point : 40}% ); opacity: 0;}
+  }
 
   -webkit-animation: fadein 1.5s, fadeout 1.5s ${props => (props.duration / 2) / 1000}s;
   animation: fadein 1.5s, fadeout 1.5s ${props => (props.duration / 2) / 1000}s;
 `;
+
 const Text = styled.span`
   font-size: 22px;
   font-weight: 600;
@@ -55,22 +62,22 @@ const Text = styled.span`
   color: #ffffff;
 `;
 
-const Toast: React.FC<ToastType> = ({message, duration = 3000, point = 50, onClose}) => {
+const Toast: React.FC<ToastType> = ({ message, duration = 3000, point = 50, onClose }) => {
 
-    React.useEffect(() => {
-        const showTime = setTimeout(() => {
-            onClose();
-        }, duration - 100);
-        return () => {
-            clearTimeout(showTime);
-        }
-    }, []);
+  React.useEffect(() => {
+    const showTime = setTimeout(() => {
+      onClose();
+    }, duration - 100);
+    return () => {
+      clearTimeout(showTime);
+    }
+  }, []);
 
-    return (
-            <Container duration={duration} point={point}>
-                <Text>{message}</Text>
-            </Container>
-    )
+  return (
+    <Container duration={duration} point={point}>
+      <Text>{message}</Text>
+    </Container>
+  )
 };
 
 export default Toast;

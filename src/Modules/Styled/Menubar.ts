@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 interface MenubarProps {
-	/** 가로 사이즈(기본 113px) */
 	width?: number | undefined;
-	/** 사이즈 */
 	size?: 'small' | 'middle' | 'large';
 }
 

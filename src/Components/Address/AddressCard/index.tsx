@@ -11,11 +11,12 @@ import Dropdown from "../../../Modules/Styled/Dropdown";
 interface AddressCardProps {
     addressInfo: AddressType,
     onClickMenu: (type: string, id: number) => void;
-    onToast:()=>void;
-    onClose:()=>void;
+    onToast: () => void;
+    onClose: () => void;
+
 }
 
-const AddressCard: React.FC<AddressCardProps> = ({ addressInfo,onClickMenu, onToast, onClose }) => {
+const AddressCard: React.FC<AddressCardProps> = ({ addressInfo, onClickMenu, onToast, onClose }) => {
 
     const menus: any = [
         {
@@ -30,7 +31,6 @@ const AddressCard: React.FC<AddressCardProps> = ({ addressInfo,onClickMenu, onTo
             name: "삭제",
             onClick: (props: any, name: string, index: number) => {
                 console.log([props, name, index]);
-                onToast();
                 onClickMenu("delete", addressInfo.id!);
             }
         }
@@ -48,7 +48,7 @@ const AddressCard: React.FC<AddressCardProps> = ({ addressInfo,onClickMenu, onTo
                 <Styles.CardRight>
                     <Styles.CardSetBtn>
                         <Dropdown items={menus} width={168}>
-                            <MdMoreHoriz onClick={onClose}/>
+                            <MdMoreHoriz onClick={onClose} />
                         </Dropdown>
                     </Styles.CardSetBtn>
                 </Styles.CardRight>
