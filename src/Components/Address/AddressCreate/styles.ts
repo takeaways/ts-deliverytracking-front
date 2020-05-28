@@ -66,6 +66,7 @@ export const FormDivider = styled.div`
 `;
 export const FormGroup = styled.div`
 	width: 100%;
+	height: 62px;
 `;
 export const Input = styled.input<{ width?: number }>`
 	border-radius: 4px;
