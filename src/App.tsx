@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as RouterDom from 'react-router-dom';
 
-import Loading from './components/Common/Loading';
+import Loading from './Components/Common/Loading';
 
 const Account = React.lazy(() => import("./Pages/Account"));
 const Address = React.lazy(() => import("./Pages/Address"));
