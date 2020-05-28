@@ -1,13 +1,10 @@
 import Http from '../../Modules/Http';
 
-interface RemoveProps {
-    addressId: number;
-}
 
 const REACT_APP_API_PATH = "http://localhost:7080";
-export const Remove = async ({addressId}: RemoveProps): Promise<any> => {
+export const Count = async (): Promise<any> => {
     try {
-        const result: any = await Http.delete(`${REACT_APP_API_PATH}/address/${addressId}`);
+        const result: any = await Http.get(`${REACT_APP_API_PATH}/address/count`);
         if (result.data.status !== 'success') return Promise.reject(result);
         return Promise.resolve(result.data.data);
     } catch (err) {
@@ -15,4 +12,4 @@ export const Remove = async ({addressId}: RemoveProps): Promise<any> => {
     }
 };
 
-export default Remove;
+export default Count;

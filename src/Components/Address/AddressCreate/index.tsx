@@ -27,30 +27,30 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
 
     //custom
     const _setReset = () => {
-        setReceiverError(false)
-        setZipCodeError(false)
-        setAddressError(false)
-    }
+        setReceiverError(false);
+        setZipCodeError(false);
+        setAddressError(false);
+    };
 
     //event handlers
     const onSetReceiver = (e: React.ChangeEvent<HTMLInputElement>) => {
         _setReset();
         setReceiver(e.target.value)
-    }
+    };
     const onSetZipCode = (e: React.ChangeEvent<HTMLInputElement>) => {
         _setReset();
         setZipCode(e.target.value)
-    }
+    };
     const onSetAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
         _setReset();
         setAddress(e.target.value)
-    }
+    };
     const onSetDefault = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCheckDefault(e.target.checked)
-    }
+    };
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        let check = true
+        let check = true;
         if (!receiver.trim()) {
             setReceiverError(true);
             check = false;
@@ -75,21 +75,13 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
                     postnumber: parseInt(zipCode, 10),
                     address: address,
                     default: checkDefault
-                }
-                // const result = await AddressService.Create(addressInfo);
-
-                useCreate(addressInfo);
-
-                // console.log(receiver);
-                // console.log(zipCode);
-                // console.log(address);
-                // console.log(checkDefault);
+                };
+                const result = await AddressService.Create(addressInfo);
+                useCreate(result);
                 onToggle();
             })();
-
         }
-
-    }
+    };
 
 
     return (

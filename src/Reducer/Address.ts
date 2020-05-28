@@ -3,39 +3,6 @@ import {AddressType} from '../Constants/Types/address';
 /*
  *
  * */
-const addresses = [
-    {
-        id: 12382726352,
-        postnumber: 203928,
-        name: '홍길동',
-        address: '서울시 강남구 강남대로 364, 11층',
-    },
-    {
-        id: 12382726390,
-        postnumber: 233958,
-        name: '고길동',
-        address: '서울시 강남구 가양대로 32, 가양아파트 21동 201호',
-    },
-    {
-        id: 12382726393,
-        postnumber: 243929,
-        name: '이영신',
-        address: '서울시 서초구 서초대로 311, 20층',
-    },
-    {
-        id: 12382726493,
-        postnumber: 303297,
-        name: '이신영',
-        address: '충청북도 강화군 양수리 223, 양수빌딩 9층',
-    },
-    {
-        id: 12382726423,
-        postnumber: 309126,
-        name: '고신영',
-        address: '인천시 강화군 양수리 213, 가양아파트 21동 201호',
-    },
-];
-
 //action's name
 const GET_ADDRESS = 'GET_ADDRESS' as const;
 const POST_ADDRESS = 'POST_ADDRESS' as const;
@@ -71,38 +38,54 @@ type AddressActionType =
     | ReturnType<typeof setDefault>;
 
 interface InitialStateType {
-    addressInfo?: AddressType[];
+    addressInfo: AddressType[] | [];
 }
 
 //initial state
 const initialState: InitialStateType = {
-    addressInfo: addresses,
+    addressInfo: [],
 };
 
 //reducer
-const memberReducer = (
+const addressReducer = (
     state: InitialStateType = initialState,
     action: AddressActionType
 ) => {
     switch (action.type) {
         case GET_ADDRESS: {
             console.log('[ GET_ADDRESS ]');
-            console.log('');
             return {
                 ...state,
-                addressInfo: action.data,
+                addressInfo: [...state.addressInfo,...action.data],
             };
         }
         case POST_ADDRESS: {
             console.log('[ POST_ADDRESS ]');
-            console.log('');
-            console.log(action.data);
+            let addressInfo: AddressType[];
+            if (action.data.default) {
+                addressInfo = (state.addressInfo as AddressType[]).map(address => {
+                    address.default = false;
+                    return address;
+                });
+                (addressInfo as AddressType[]).unshift(action.data)
+            } else {
+                addressInfo = state.addressInfo;
+                const index = addressInfo.findIndex(address => address.default);
 
-            return state;
+                if (!!index) {
+                    addressInfo.unshift(action.data);
+                } else {
+                    addressInfo.splice(1, 0, action.data);
+                }
+            }
+
+            return {
+                ...state,
+                addressInfo
+            }
         }
         case DELETE_ADDRESS: {
             console.log('[ DELETE_ADDRESS ]');
-            console.log('');
             const addressInfo = state.addressInfo!.filter((address) => {
                 return address.id !== action.data;
             });
@@ -113,8 +96,7 @@ const memberReducer = (
         }
         case SET_DEFAULT: {
             console.log('[ SET_DEFAULT ]');
-            console.log('');
-            const addressInfo = state.addressInfo!.map((address) => {
+            const addressInfo = (state.addressInfo as AddressType[]).map((address) => {
                 if (address.id !== action.data) {
                     address.default = false;
                     return address;
@@ -122,17 +104,19 @@ const memberReducer = (
                 address.default = true;
                 return address;
             });
+
+            const index = addressInfo.findIndex(address => address.default);
+            const defaultTarget = addressInfo.splice(index, 1);
+            addressInfo.unshift(defaultTarget[0]);
             return {
                 ...state,
-                addressInfo,
+                addressInfo
             };
         }
         default: {
-            console.log('[ default ]');
-            console.log('');
             return state;
         }
     }
 };
 
-export default memberReducer;
+export default addressReducer;

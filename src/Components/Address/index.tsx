@@ -8,10 +8,6 @@ import * as Styles from "./styles";
 import AddressCardList from "./AddressCardList";
 import AddressInfo from "./AddressInfo";
 import AddressCreate from "./AddressCreate";
-import PageContainer from "../../Modules/Styled/PageCotainer";
-import PageTitle from "../../Modules/Styled/PageTitle";
-import HomeNavbar from "../Common/HomeNavbar";
-
 
 const Address = () => {
 

@@ -6,7 +6,7 @@ import {RootState} from '../../Reducer';
 
 const useAddress = () => {
     const {addressInfo} = Redux.useSelector((state: RootState) => state.address);
-    return addressInfo
+    return addressInfo || []
 };
 
 export default useAddress
