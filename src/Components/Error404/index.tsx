@@ -1,7 +1,3 @@
-/**
- * 404 페이지
- */
-
 import * as React from 'react';
 import * as Styles from './styles';
 
