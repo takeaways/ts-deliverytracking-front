@@ -14,7 +14,7 @@ import useGetAddressAction from "../../Hooks/Address/useGetAddressAction";
 
 import {AddressType} from "../../Constants/Types/address";
 
-const addresses:AddressType[] = [
+const addresses: AddressType[] = [
     {
         "id": 12382726352,
         "postnumber": 203928,
@@ -26,7 +26,7 @@ const addresses:AddressType[] = [
         "postnumber": 233958,
         "name": "고길동",
         "address": "서울시 강남구 가양대로 32, 가양아파트 21동 201호",
-        "default":true
+        "default": true
     },
     {
         "id": 12382726393,
@@ -48,35 +48,32 @@ const addresses:AddressType[] = [
     }];
 
 
-
-
-const Address:React.FC<RouterDom.RouteComponentProps> = ({match}) => {
+const Address: React.FC<RouterDom.RouteComponentProps> = ({match}) => {
 
     const onGetAddress = useGetAddressAction();
     const history = RouterDom.useHistory();
 
 
-
-    const loadAddress = async () =>{
+    const loadAddress = async () => {
         try {
             // const result = await AddressService.Get();
             onGetAddress(addresses)
-        }catch (e) {
+        } catch (e) {
             // history.push('/')
         }
     };
 
-    React.useEffect(()=>{
-        (async()=>{
+    React.useEffect(() => {
+        (async () => {
             await loadAddress();
         })();
-    },[]);
+    }, []);
     return (
         <>
             <PageContainer>
                 <PageTitle>설정</PageTitle>
-                <HomeNavbar />
-                <AddressComponent />
+                <HomeNavbar/>
+                <AddressComponent/>
             </PageContainer>
         </>
     )

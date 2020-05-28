@@ -12,14 +12,14 @@ interface MyLinksTypes {
     label: string;
 }
 
-const HomeNavbar: React.FC<RouterDom.RouteComponentProps> = ({ location: { pathname } }) => {
+const HomeNavbar: React.FC<RouterDom.RouteComponentProps> = ({location: {pathname}}) => {
 
     const myLinks = React.useRef<MyLinksTypes[]>([
-        { id: 0, path: "/profile", label: "프로필" },
-        { id: 1, path: "/account", label: "계정" },
-        { id: 2, path: "/paymethod", label: "결제수단" },
-        { id: 3, path: "/address", label: "배송지" },
-        { id: 4, path: "/notification", label: "알림" },
+        {id: 0, path: "/profile", label: "프로필"},
+        {id: 1, path: "/account", label: "계정"},
+        {id: 2, path: "/paymethod", label: "결제수단"},
+        {id: 3, path: "/address", label: "배송지"},
+        {id: 4, path: "/notification", label: "알림"},
     ]);
 
     return (

@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { MdErrorOutline } from "react-icons/md"
+import {MdErrorOutline} from "react-icons/md"
 
 const Container = styled.div`
   width: 660px;
@@ -39,12 +39,12 @@ const Text = styled.span`
 `
 
 
-const Empty: React.FC<{ message: string }> = ({ message }) => {
+const Empty: React.FC<{ message: string }> = ({message}) => {
     return (
         <Container>
-            <Icon ><MdErrorOutline /></Icon>
+            <Icon><MdErrorOutline/></Icon>
             <Text>{message}</Text>
-        </Container >
+        </Container>
     )
 }
 

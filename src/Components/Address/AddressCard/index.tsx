@@ -1,7 +1,7 @@
 import * as React from "react";
-import { MdMoreHoriz } from "react-icons/md";
+import {MdMoreHoriz} from "react-icons/md";
 
-import { AddressType } from "../../../Constants/Types/address";
+import {AddressType} from "../../../Constants/Types/address";
 
 //styled
 import * as Styles from "./styles";
@@ -16,7 +16,7 @@ interface AddressCardProps {
 
 }
 
-const AddressCard: React.FC<AddressCardProps> = ({ addressInfo, onClickMenu, onToast, onClose }) => {
+const AddressCard: React.FC<AddressCardProps> = ({addressInfo, onClickMenu, onToast, onClose}) => {
 
     const menus: any = [
         {
@@ -37,7 +37,6 @@ const AddressCard: React.FC<AddressCardProps> = ({ addressInfo, onClickMenu, onT
     ];
 
 
-
     return (
         <Styles.Container>
             <Styles.Card className="card">
@@ -48,12 +47,12 @@ const AddressCard: React.FC<AddressCardProps> = ({ addressInfo, onClickMenu, onT
                 <Styles.CardRight>
                     <Styles.CardSetBtn>
                         <Dropdown items={menus} width={168}>
-                            <MdMoreHoriz onClick={onClose} />
+                            <MdMoreHoriz onClick={onClose}/>
                         </Dropdown>
                     </Styles.CardSetBtn>
                 </Styles.CardRight>
             </Styles.Card>
-        </Styles.Container >
+        </Styles.Container>
     )
 }
 

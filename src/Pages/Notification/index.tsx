@@ -8,7 +8,7 @@ const Notification = () => {
         <>
             <PageContainer>
                 <PageTitle>설정</PageTitle>
-                <HomeNavbar />
+                <HomeNavbar/>
 
             </PageContainer>
         </>

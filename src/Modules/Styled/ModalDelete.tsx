@@ -76,7 +76,7 @@ interface DeletConfirmProps {
     onCancel: () => void
 }
 
-const DeleteConfirm: React.FC<DeletConfirmProps> = ({ message, onConfirm, onCancel }) => {
+const DeleteConfirm: React.FC<DeletConfirmProps> = ({message, onConfirm, onCancel}) => {
     return (
         <Container>
             <Title>{message}</Title>

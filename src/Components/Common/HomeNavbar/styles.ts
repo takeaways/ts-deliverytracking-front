@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link as L } from 'react-router-dom';
+import {Link as L} from 'react-router-dom';
 
 // 네비바 커버
 export const Container = styled.div`

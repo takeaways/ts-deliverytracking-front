@@ -13,13 +13,13 @@ import PageTitle from "../../Modules/Styled/PageTitle";
 import HomeNavbar from "../Common/HomeNavbar";
 
 
-
 const Address = () => {
 
     //Modal Controller Create Form
     const [isOpen, setIsOpen] = React.useState(false);
-    const toggleCreate = () => { setIsOpen(!isOpen) };
-
+    const toggleCreate = () => {
+        setIsOpen(!isOpen)
+    };
 
 
     return (
@@ -30,10 +30,10 @@ const Address = () => {
             </Styles.ContentHeader>
             <Styles.Container>
                 <Styles.LeftContentBlock>
-                    <AddressCardList />
+                    <AddressCardList/>
                 </Styles.LeftContentBlock>
                 <Styles.RightContentBlock>
-                    <AddressInfo />
+                    <AddressInfo/>
                 </Styles.RightContentBlock>
             </Styles.Container>
             {/*    add form */}
@@ -42,7 +42,7 @@ const Address = () => {
                 onBackgroundClick={toggleCreate}
                 onEscapeKeydown={toggleCreate}
             >
-                <AddressCreate onToggle={toggleCreate} />
+                <AddressCreate onToggle={toggleCreate}/>
             </Modal>
 
         </ContentContainer>

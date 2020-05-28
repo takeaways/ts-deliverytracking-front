@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Redux from "react-redux";
-import { postAddress } from "../../Reducer/Address";
-import { AddressType } from "../../Constants/Types/address";
+import {postAddress} from "../../Reducer/Address";
+import {AddressType} from "../../Constants/Types/address";
 
 
 export const useCreateAddressAction = () => {

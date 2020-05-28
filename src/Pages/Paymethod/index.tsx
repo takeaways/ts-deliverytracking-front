@@ -8,10 +8,10 @@ const Paymethod = () => {
         <>
             <PageContainer>
                 <PageTitle>설정</PageTitle>
-                <HomeNavbar />
+                <HomeNavbar/>
             </PageContainer>
         </>
     )
-}
+};
 
 export default Paymethod;

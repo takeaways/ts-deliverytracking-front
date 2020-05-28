@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 interface MenubarProps {
-	width?: number | undefined;
-	size?: 'small' | 'middle' | 'large';
+    width?: number | undefined;
+    size?: 'small' | 'middle' | 'large';
 }
 
 const Menubar = styled.div<MenubarProps>`
     position: relative;
     z-index: 14;
     width: ${(props) => {
-			return props.width ? props.width : 168;
-		}}px;
+    return props.width ? props.width : 168;
+}}px;
     
     border: solid 1px #cdcdcd;
     background-color: #ffffff;
@@ -38,9 +38,9 @@ const Menubar = styled.div<MenubarProps>`
         background-color: #ffffff;
 
         ${(props) =>
-					props.size &&
-					props.size === 'small' &&
-					`
+    props.size &&
+    props.size === 'small' &&
+    `
             height: 40px;
             padding: 0 9px;
             font-size: 16px;
@@ -48,9 +48,9 @@ const Menubar = styled.div<MenubarProps>`
         `}
 
         ${(props) =>
-					props.size &&
-					props.size === 'middle' &&
-					`
+    props.size &&
+    props.size === 'middle' &&
+    `
             height: 42px;
             padding: 0 12px;
             font-size: 18px;
@@ -58,9 +58,9 @@ const Menubar = styled.div<MenubarProps>`
         `}
 
         ${(props) =>
-					props.size &&
-					props.size === 'large' &&
-					`
+    props.size &&
+    props.size === 'large' &&
+    `
             height: 46px;
             padding: 3px 14px;
             font-size: 20px;

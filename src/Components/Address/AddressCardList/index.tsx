@@ -34,7 +34,9 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
 
     //Modal Controller Detele Comfirm
     const [isDelete, setIsDelete] = React.useState<boolean>(false);
-    const toggleDelete = () => { setIsDelete(!isDelete) };
+    const toggleDelete = () => {
+        setIsDelete(!isDelete)
+    };
 
     const [change, setChange] = React.useState<boolean>(false);
     const onToast = () => {
@@ -51,10 +53,9 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
         // const result = await AddressService.Delete({addressId: id});
         // console.log(result);
         if (addressId) {
-            onDeleteAddress({ addressId });
+            onDeleteAddress({addressId});
         }
     }
-
 
 
     const handleItemMenu = async (type: string, id: number) => {
@@ -64,7 +65,7 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                 // console.log(result);
                 console.log("------------setDefault");
 
-                onSetDefault({ addressId: id });
+                onSetDefault({addressId: id});
 
                 break;
             }
@@ -97,7 +98,7 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                                 />
                             </Styles.Item>
                         ))
-                    ) : (<Empty message={"등록된 배송지가 없습니다."} />)
+                    ) : (<Empty message={"등록된 배송지가 없습니다."}/>)
                     }
                 </Styles.List>
             </Styles.Container>
@@ -106,9 +107,9 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                 onBackgroundClick={toggleDelete}
                 onEscapeKeydown={toggleDelete}
             >
-                <DeleteConfirm message={"정말 삭제하시겠니까?"} onCancel={toggleDelete} onConfirm={onConfirm} />
+                <DeleteConfirm message={"정말 삭제하시겠니까?"} onCancel={toggleDelete} onConfirm={onConfirm}/>
             </Modal>
-            {change && <Toast message={"기본 배송지가 변경되었습니다."} onClose={onClose} />}
+            {change && <Toast message={"기본 배송지가 변경되었습니다."} onClose={onClose}/>}
         </>
     )
 };

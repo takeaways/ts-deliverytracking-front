@@ -1,11 +1,11 @@
 import * as Redux from 'react-redux';
 import * as React from "react";
 
-import { RootState } from '../../Reducer';
+import {RootState} from '../../Reducer';
 
 
 const useAddress = () => {
-    const {addressInfo} = Redux.useSelector((state:RootState) => state.address);
+    const {addressInfo} = Redux.useSelector((state: RootState) => state.address);
     return addressInfo
 };
 

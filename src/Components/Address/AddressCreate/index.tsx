@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as Styles from "./styles";
-import { MdClear } from "react-icons/md";
+import {MdClear} from "react-icons/md";
 
 import * as AddressService from "../../../Services/Address";
-import { AddressType } from "../../../Constants/Types/address";
+import {AddressType} from "../../../Constants/Types/address";
 import useCreateAddressAction from "../../../Hooks/Address/useCreateAddressAction";
 
 
@@ -11,7 +11,7 @@ interface AddressCreateProps {
     onToggle: () => void
 }
 
-const AddressCreate: React.FC<AddressCreateProps> = ({ onToggle }) => {
+const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
 
     //reducer 
     const useCreate = useCreateAddressAction();
@@ -45,7 +45,9 @@ const AddressCreate: React.FC<AddressCreateProps> = ({ onToggle }) => {
         _setReset();
         setAddress(e.target.value)
     }
-    const onSetDefault = (e: React.ChangeEvent<HTMLInputElement>) => { setCheckDefault(e.target.checked) }
+    const onSetDefault = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCheckDefault(e.target.checked)
+    }
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         let check = true
@@ -90,41 +92,37 @@ const AddressCreate: React.FC<AddressCreateProps> = ({ onToggle }) => {
     }
 
 
-
-
-
-
     return (
         <Styles.Container onSubmit={onSubmit}>
             <Styles.Header>
                 <Styles.HeaderLeft>배송지 추가</Styles.HeaderLeft>
-                <Styles.HeaderRight onClick={onToggle}><MdClear /></Styles.HeaderRight>
+                <Styles.HeaderRight onClick={onToggle}><MdClear/></Styles.HeaderRight>
             </Styles.Header>
             <Styles.Body>
                 <Styles.FormDivider>
                     <Styles.FormGroup>
-                        <Styles.Input placeholder={"받는 사람"} value={receiver} onChange={onSetReceiver} />
+                        <Styles.Input placeholder={"받는 사람"} value={receiver} onChange={onSetReceiver}/>
                         {receiverError && <Styles.Error>받는 분 이름을 입력해주세요.</Styles.Error>}
                     </Styles.FormGroup>
                     <Styles.FormGroup>
-                        <Styles.Input type="number" placeholder={"우편번호"} width={228} value={zipCode} onChange={onSetZipCode} />
+                        <Styles.Input type="number" placeholder={"우편번호"} width={228} value={zipCode} onChange={onSetZipCode}/>
                         {zipCodeError && <Styles.Error>우편번호를 입력해주세요.</Styles.Error>}
                     </Styles.FormGroup>
                 </Styles.FormDivider>
                 <Styles.FormDivider>
                     <Styles.FormGroup>
-                        <Styles.Input style={{ width: "100%" }} placeholder={"주소"} value={address} onChange={onSetAddress} />
+                        <Styles.Input style={{width: "100%"}} placeholder={"주소"} value={address} onChange={onSetAddress}/>
                         {addressError && <Styles.Error>주소를 입력해 주세요.</Styles.Error>}
                     </Styles.FormGroup>
                 </Styles.FormDivider>
                 <Styles.FormDivider>
                     <Styles.FormGroup>
-                        <Styles.Check checked={checkDefault} onChange={onSetDefault} />
+                        <Styles.Check checked={checkDefault} onChange={onSetDefault}/>
                     </Styles.FormGroup>
                 </Styles.FormDivider>
             </Styles.Body>
             <Styles.Footer>
-                <Styles.FormDivider style={{ height: "82px;" }}>
+                <Styles.FormDivider style={{height: "82px;"}}>
                     <Styles.FormGroup>
                         <Styles.Button>등록 완료</Styles.Button>
                     </Styles.FormGroup>
