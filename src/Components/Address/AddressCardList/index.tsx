@@ -67,7 +67,7 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
     const onConfirm = async () => {
         try {
             toggleDelete();
-            const result = await AddressService.Delete({ addressId: addressId! });
+            await AddressService.Delete({ addressId: addressId! });
             if (addressId) {
                 onDeleteAddress({ addressId });
             }
@@ -102,7 +102,6 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
 
 
     React.useEffect(() => {
-        console.log(",----------", count)
         if (addressInfo.length < count) {
             setMore(true);
         } else {
@@ -123,6 +122,7 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                                     onClickMenu={handleItemMenu}
                                     onToast={onToast}
                                     onClose={onClose}
+                                    more = {more}
                                 />
                             </Styles.Item>
                         ))

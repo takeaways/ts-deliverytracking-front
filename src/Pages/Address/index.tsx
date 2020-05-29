@@ -12,11 +12,16 @@ import useGetAddressAction from "../../Hooks/Address/useGetAddressAction";
 
 import { AddressType } from "../../Constants/Types/address";
 import useCountAction from "../../Hooks/Address/useCountAction";
+import useAddress from "../../Hooks/Address/useAddress";
 
 const Address: React.FC<RouterDom.RouteComponentProps> = ({ match }) => {
 
+    //hooks
     const onGetAddress = useGetAddressAction();
     const onCount = useCountAction();
+    const addressInfo = useAddress();
+
+
     const history = RouterDom.useHistory();
 
 
@@ -40,8 +45,10 @@ const Address: React.FC<RouterDom.RouteComponentProps> = ({ match }) => {
 
     React.useEffect(() => {
         (async () => {
-            await loadAddress();
-            await loadCount();
+            if(addressInfo.length === 0){
+                await loadAddress();
+                await loadCount();
+            }
         })();
     }, []);
     return (

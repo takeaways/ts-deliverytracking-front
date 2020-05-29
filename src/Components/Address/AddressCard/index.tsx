@@ -14,9 +14,13 @@ interface AddressCardProps {
     onToast: () => void;
     onClose: () => void;
 
+    more:boolean;
+
 }
 
-const AddressCard: React.FC<AddressCardProps> = ({addressInfo, onClickMenu, onToast, onClose}) => {
+const AddressCard: React.FC<AddressCardProps> = ({addressInfo, onClickMenu, onToast, onClose, more}) => {
+
+    const card = React.useRef<HTMLDivElement>(null);
 
     const menus: any = [
         {
@@ -37,9 +41,20 @@ const AddressCard: React.FC<AddressCardProps> = ({addressInfo, onClickMenu, onTo
     ];
 
 
+    React.useEffect(()=>{
+        if(card.current){
+            if(more){
+                card.current!.classList.add("remove")
+            }else{
+                card.current!.classList.remove("remove")
+            }
+        }
+    },[more]);
+
+
     return (
         <Styles.Container>
-            <Styles.Card className="card">
+            <Styles.Card ref={card} className="card">
                 <Styles.CardLeft>
                     <Styles.CardZip>[ {addressInfo.postnumber} ] {addressInfo.default && <Styles.Default>기본</Styles.Default>}</Styles.CardZip>
                     <Styles.CardAddress>{addressInfo.address}</Styles.CardAddress>

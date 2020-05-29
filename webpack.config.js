@@ -1,9 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-//plugins
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
     mode: 'production', //production
     devtool: 'hidden-source-map', //hidden-source-map

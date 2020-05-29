@@ -19,7 +19,13 @@ export const List = styled.ul`
 		border-bottom-left-radius: 8px;
 		border-bottom-right-radius: 8px;
 	}
+	
+	& > li:last-child .card:last-child.remove {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
 `;
+
 export const Item = styled.li`
 	@media screen and (max-width: 768px) {
 		width: 684px;
