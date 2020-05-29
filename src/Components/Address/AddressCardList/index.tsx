@@ -128,8 +128,8 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                         ))
                     ) : (<Empty message={"등록된 배송지가 없습니다."}/>)
                     }
+                    {more && <ShowMore onShowMore={onShowMore}/>}
                 </Styles.List>
-                {more && <ShowMore onShowMore={onShowMore}/>}
             </Styles.Container>
             <Modal
                 isOpen={isDelete}

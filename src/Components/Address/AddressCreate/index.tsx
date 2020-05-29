@@ -24,12 +24,14 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
     const [receiverError, setReceiverError] = React.useState(false);
     const [zipCodeError, setZipCodeError] = React.useState(false);
     const [addressError, setAddressError] = React.useState(false);
+    const [lengthError, setLengthError] = React.useState(false);
 
     //custom
     const _setReset = () => {
         setReceiverError(false);
         setZipCodeError(false);
         setAddressError(false);
+        setLengthError(false);
     };
 
     //event handlers
@@ -61,6 +63,10 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
         }
         if (!address.trim()) {
             setAddressError(true);
+            check = false;
+        }
+        if (address.trim().length > 25) {
+            setLengthError(true);
             check = false;
         }
         if (check) {
@@ -97,14 +103,15 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
                         {receiverError && <Styles.Error>받는 분 이름을 입력해주세요.</Styles.Error>}
                     </Styles.FormGroup>
                     <Styles.FormGroup>
-                        <Styles.Input type="number" placeholder={"우편번호"} width={228} value={zipCode} onChange={onSetZipCode}/>
+                        <Styles.Input pattern="[0-9]*" placeholder={"우편번호 : 123456"} width={228} value={zipCode} onChange={onSetZipCode}/>
                         {zipCodeError && <Styles.Error>우편번호를 입력해주세요.</Styles.Error>}
                     </Styles.FormGroup>
                 </Styles.FormDivider>
                 <Styles.FormDivider>
                     <Styles.FormGroup>
-                        <Styles.Input style={{width: "100%"}} placeholder={"주소"} value={address} onChange={onSetAddress}/>
+                        <Styles.Input style={{width: "100%"}} placeholder={"주소"} value={address} onChange={onSetAddress} maxLength={25}/>
                         {addressError && <Styles.Error>주소를 입력해 주세요.</Styles.Error>}
+                        {lengthError && <Styles.Error>주소는 25자를 넘을 수 없습니다.</Styles.Error>}
                     </Styles.FormGroup>
                 </Styles.FormDivider>
                 <Styles.FormDivider>

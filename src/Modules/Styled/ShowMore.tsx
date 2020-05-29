@@ -45,7 +45,7 @@ interface ShowMoreProps {
 const ShowMore: React.FC<ShowMoreProps> = ({ onShowMore }) => {
 
   return (
-    <Container onClick={onShowMore}>
+    <Container onClick={onShowMore} className={"card"}>
       <Text>더보기</Text>
     </Container>
   )
