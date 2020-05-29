@@ -1,23 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html,
 body,
 #root {
-    height: 100%;
-    background-color: #f6f7fa;
+	height: 100%;
+	background-color: #f6f7fa;
+
+	@media screen and (max-width: 768px) {
+		width: 684px;
+	}
+
+	@media screen and (max-width: 360px) {
+		width: 360px;
+	}
 }
 
 :root {
-    --royal-blue: #2c55dd;
-    --light-blue: #377dff;
-    --dark-blue: #113ac2;
-    --black-pearl: #071b32;
-    --black: #1a1a1a;
-    --brown-grey: #989898;
-    --pale-lilac: #e5e6eb;
-    --white: #f9f9f9;
-    --pale-grey: #f6f9fc;
+	--royal-blue: #2c55dd;
+	--light-blue: #377dff;
+	--dark-blue: #113ac2;
+	--black-pearl: #071b32;
+	--black: #1a1a1a;
+	--brown-grey: #989898;
+	--pale-lilac: #e5e6eb;
+	--white: #f9f9f9;
+	--pale-grey: #f6f9fc;
 }
