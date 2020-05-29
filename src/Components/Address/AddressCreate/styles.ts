@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.form`
 	width: 510px;
@@ -81,7 +81,7 @@ export const Input = styled.input<{ width?: number }>`
 	}
 `;
 export const Check = styled.input.attrs({
-    type: 'checkbox',
+    type: "checkbox"
 })`
 	width: 20px;
 	height: 20px;

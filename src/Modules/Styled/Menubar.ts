@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface MenubarProps {
     width?: number | undefined;
-    size?: 'small' | 'middle' | 'large';
+    size?: "small" | "middle" | "large";
 }
 
 const Menubar = styled.div<MenubarProps>`
@@ -39,7 +39,7 @@ const Menubar = styled.div<MenubarProps>`
 
         ${(props) =>
     props.size &&
-    props.size === 'small' &&
+    props.size === "small" &&
     `
             height: 40px;
             padding: 0 9px;
@@ -49,7 +49,7 @@ const Menubar = styled.div<MenubarProps>`
 
         ${(props) =>
     props.size &&
-    props.size === 'middle' &&
+    props.size === "middle" &&
     `
             height: 42px;
             padding: 0 12px;
@@ -59,7 +59,7 @@ const Menubar = styled.div<MenubarProps>`
 
         ${(props) =>
     props.size &&
-    props.size === 'large' &&
+    props.size === "large" &&
     `
             height: 46px;
             padding: 3px 14px;

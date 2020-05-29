@@ -5,8 +5,8 @@ import {getAddress} from "../../Reducer/Address";
 const useGetAddressAction = () => {
     const dispatch = Redux.useDispatch();
     return React.useCallback((data) => {
-        dispatch(getAddress(data))
-    }, [dispatch])
+        dispatch(getAddress(data));
+    }, [dispatch]);
 };
 
 export default useGetAddressAction;

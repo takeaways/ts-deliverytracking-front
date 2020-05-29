@@ -12,7 +12,7 @@ const Notification = () => {
 
             </PageContainer>
         </>
-    )
-}
+    );
+};
 
 export default Notification;

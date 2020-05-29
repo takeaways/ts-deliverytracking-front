@@ -14,7 +14,7 @@ interface AddressCardProps {
     onToast: () => void;
     onClose: () => void;
 
-    more:boolean;
+    more: boolean;
 
 }
 
@@ -41,15 +41,15 @@ const AddressCard: React.FC<AddressCardProps> = ({addressInfo, onClickMenu, onTo
     ];
 
 
-    React.useEffect(()=>{
-        if(card.current){
-            if(more){
-                card.current!.classList.add("remove")
-            }else{
-                card.current!.classList.remove("remove")
+    React.useEffect(() => {
+        if (card.current) {
+            if (more) {
+                card.current!.classList.add("remove");
+            } else {
+                card.current!.classList.remove("remove");
             }
         }
-    },[more]);
+    }, [more]);
 
 
     return (
@@ -68,7 +68,7 @@ const AddressCard: React.FC<AddressCardProps> = ({addressInfo, onClickMenu, onTo
                 </Styles.CardRight>
             </Styles.Card>
         </Styles.Container>
-    )
-}
+    );
+};
 
 export default AddressCard;

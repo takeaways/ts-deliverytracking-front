@@ -11,7 +11,7 @@ const Paymethod = () => {
                 <HomeNavbar/>
             </PageContainer>
         </>
-    )
+    );
 };
 
 export default Paymethod;

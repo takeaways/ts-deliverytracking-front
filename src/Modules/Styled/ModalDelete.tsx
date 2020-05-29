@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
     width: 312px;
@@ -8,7 +8,7 @@ const Container = styled.div`
     box-shadow: 1px 3px 5px 0 rgba(47, 46, 46, 0.5);
     border: solid 1px #979797;
     background-color: #ffffff;
-`
+`;
 const Title = styled.div`
     display:flex;
     justify-content:center;
@@ -23,11 +23,11 @@ const Title = styled.div`
     letter-spacing: normal;
     color: #2f2f2f;
     border-bottom: 1px solid #aaaaaa;
-`
+`;
 const ItemBlock = styled.div`
     display:flex;
     height:67px;
-`
+`;
 const ItemConfirm = styled.div`
   font-size: 18px;
   font-weight: 600;
@@ -47,7 +47,7 @@ const ItemConfirm = styled.div`
   &:hover{
       cursor: pointer;
   };
-`
+`;
 const ItemCancel = styled.div`
   font-size: 18px;
   font-weight: 600;
@@ -67,7 +67,7 @@ const ItemCancel = styled.div`
   &:hover{
       cursor: pointer;
   };
-`
+`;
 
 
 interface DeletConfirmProps {
@@ -85,7 +85,7 @@ const DeleteConfirm: React.FC<DeletConfirmProps> = ({message, onConfirm, onCance
                 <ItemCancel onClick={onCancel}>취소</ItemCancel>
             </ItemBlock>
         </Container>
-    )
-}
+    );
+};
 
 export default DeleteConfirm;

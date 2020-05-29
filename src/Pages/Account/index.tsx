@@ -14,7 +14,7 @@ const Account = () => {
                 <HomeNavbar/>
             </PageContainer>
         </>
-    )
+    );
 };
 
 export default Account;

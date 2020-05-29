@@ -2,9 +2,9 @@
  * 메인 네비바 컨테이너
  */
 
-import * as React from 'react';
-import * as RouterDom from 'react-router-dom';
-import * as Styles from './styles';
+import * as React from "react";
+import * as RouterDom from "react-router-dom";
+import * as Styles from "./styles";
 
 interface MyLinksTypes {
     id: number;
@@ -19,7 +19,7 @@ const HomeNavbar: React.FC<RouterDom.RouteComponentProps> = ({location: {pathnam
         {id: 1, path: "/account", label: "계정"},
         {id: 2, path: "/paymethod", label: "결제수단"},
         {id: 3, path: "/address", label: "배송지"},
-        {id: 4, path: "/notification", label: "알림"},
+        {id: 4, path: "/notification", label: "알림"}
     ]);
 
     return (

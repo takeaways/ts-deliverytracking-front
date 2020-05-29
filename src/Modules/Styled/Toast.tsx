@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import * as React from 'react';
+import styled from "styled-components";
+import * as React from "react";
 
 interface ToastType {
     message: string;
@@ -70,14 +70,14 @@ const Toast: React.FC<ToastType> = ({message, duration = 3000, point = 50, onClo
         }, duration - 100);
         return () => {
             clearTimeout(showTime);
-        }
+        };
     }, []);
 
     return (
         <Container duration={duration} point={point}>
             <Text>{message}</Text>
         </Container>
-    )
+    );
 };
 
 export default Toast;

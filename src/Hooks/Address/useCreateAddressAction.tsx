@@ -7,8 +7,8 @@ import {AddressType} from "../../Constants/Types/address";
 export const useCreateAddressAction = () => {
     const dispatch = Redux.useDispatch();
     return React.useCallback((createInfo: AddressType) => {
-        dispatch(postAddress(createInfo))
-    }, [dispatch])
+        dispatch(postAddress(createInfo));
+    }, [dispatch]);
 };
 
 export default useCreateAddressAction;

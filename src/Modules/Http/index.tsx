@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 axios.interceptors.request.use(
     (config: any) => {
@@ -10,10 +10,10 @@ axios.interceptors.request.use(
 );
 axios.interceptors.response.use(
     (response: any) => {
-        if (response.data.status === 'error') {
+        if (response.data.status === "error") {
             return Promise.reject({
                 response: response,
-                message: response.data.message,
+                message: response.data.message
             });
         }
         return response;
@@ -21,7 +21,7 @@ axios.interceptors.response.use(
     (error: any) => {
         return Promise.reject({
             response: error.response,
-            message: error.response.data.message,
+            message: error.response.data.message
         });
     }
 );

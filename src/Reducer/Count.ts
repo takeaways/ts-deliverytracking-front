@@ -1,19 +1,19 @@
-import {AddressType} from '../Constants/Types/address';
+
 
 /*
  *
  * */
 //action's name
-const GET_COUNT = 'GET_COUNT' as const;
-const GET_DOWN = 'GET_DOWN' as const;
+const GET_COUNT = "GET_COUNT" as const;
+const GET_DOWN = "GET_DOWN" as const;
 
 //action
-export const getCount = (count:number) =>({
+export const getCount = (count: number) => ({
     type: GET_COUNT,
-    data: count,
+    data: count
 } as const);
-export const getDown = () =>({
-    type: GET_DOWN,
+export const getDown = () => ({
+    type: GET_DOWN
 } as const);
 //action type
 type CountActionType =
@@ -27,7 +27,7 @@ interface InitialStateType {
 
 //initial state
 const initialState: InitialStateType = {
-    count: 0,
+    count: 0
 };
 
 //reducer
@@ -37,17 +37,17 @@ const countReducer = (
 ) => {
     switch (action.type) {
         case "GET_COUNT": {
-            console.log('[ GET_COUNT ]');
+            console.log("[ GET_COUNT ]");
             return {
                 ...state,
-                count:action.data
+                count: action.data
             };
         }
-        case GET_DOWN:{
+        case GET_DOWN: {
             return {
                 ...state,
-                count:state.count !== 0 && state.count - 1
-            }
+                count: state.count !== 0 && state.count - 1
+            };
         }
         default: {
             return state;

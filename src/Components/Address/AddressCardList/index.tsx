@@ -20,7 +20,7 @@ import DeleteConfirm from "../../../Modules/Styled/ModalDelete";
 import Empty from "../../../Modules/Styled/Empty";
 import ShowMore from "../../../Modules/Styled/ShowMore";
 import useGetAddressAction from "../../../Hooks/Address/useGetAddressAction";
-import { AddressType } from "../../../Constants/Types/address";
+import {AddressType} from "../../../Constants/Types/address";
 import useCount from "../../../Hooks/Address/useCount";
 import useCountDown from "../../../Hooks/Address/useCountDown";
 
@@ -52,7 +52,7 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
     //Modal Controller Detele Comfirm
     const [isDelete, setIsDelete] = React.useState<boolean>(false);
     const toggleDelete = () => {
-        setIsDelete(!isDelete)
+        setIsDelete(!isDelete);
     };
 
     const [change, setChange] = React.useState<boolean>(false);
@@ -67,9 +67,9 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
     const onConfirm = async () => {
         try {
             toggleDelete();
-            await AddressService.Delete({ addressId: addressId! });
+            await AddressService.Delete({addressId: addressId!});
             if (addressId) {
-                onDeleteAddress({ addressId });
+                onDeleteAddress({addressId});
             }
         } catch (e) {
             history.push("/address");
@@ -78,16 +78,16 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
     };
     const onShowMore = async () => {
         const listLength = (listLengthRef.current as HTMLUListElement).childElementCount;
-        const result = await AddressService.Get({ offset: listLength });
+        const result = await AddressService.Get({offset: listLength});
         onGet(result);
 
     };
     const handleItemMenu = async (type: string, id: number) => {
         switch (type) {
             case "setDefault": {
-                const result = await AddressService.Set({ addressId: id });
+                const result = await AddressService.Set({addressId: id});
                 if (result) {
-                    onSetDefault({ addressId: result });
+                    onSetDefault({addressId: result});
                 }
                 break;
             }
@@ -105,7 +105,7 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
         if (addressInfo.length < count) {
             setMore(true);
         } else {
-            setMore(false)
+            setMore(false);
         }
 
     }, [addressInfo && addressInfo.length, count]);
@@ -122,26 +122,26 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                                     onClickMenu={handleItemMenu}
                                     onToast={onToast}
                                     onClose={onClose}
-                                    more = {more}
+                                    more={more}
                                 />
                             </Styles.Item>
                         ))
-                    ) : (<Empty message={"등록된 배송지가 없습니다."} />)
+                    ) : (<Empty message={"등록된 배송지가 없습니다."}/>)
                     }
 
                 </Styles.List>
-                {more && <ShowMore onShowMore={onShowMore} />}
+                {more && <ShowMore onShowMore={onShowMore}/>}
             </Styles.Container>
             <Modal
                 isOpen={isDelete}
                 onBackgroundClick={toggleDelete}
                 onEscapeKeydown={toggleDelete}
             >
-                <DeleteConfirm message={"정말 삭제하시겠니까?"} onCancel={toggleDelete} onConfirm={onConfirm} />
+                <DeleteConfirm message={"정말 삭제하시겠니까?"} onCancel={toggleDelete} onConfirm={onConfirm}/>
             </Modal>
-            {change && <Toast message={"기본 배송지가 변경되었습니다."} onClose={onClose} />}
+            {change && <Toast message={"기본 배송지가 변경되었습니다."} onClose={onClose}/>}
         </>
-    )
+    );
 };
 
 export default AddressCardList;

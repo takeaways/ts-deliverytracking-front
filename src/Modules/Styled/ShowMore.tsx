@@ -40,15 +40,16 @@ const Text = styled.span`
 `;
 
 interface ShowMoreProps {
-  onShowMore: () => void
+    onShowMore: () => void
 }
-const ShowMore: React.FC<ShowMoreProps> = ({ onShowMore }) => {
 
-  return (
-    <Container onClick={onShowMore} className={"card"}>
-      <Text>더보기</Text>
-    </Container>
-  )
+const ShowMore: React.FC<ShowMoreProps> = ({onShowMore}) => {
+
+    return (
+        <Container onClick={onShowMore} className={"card"}>
+            <Text>더보기</Text>
+        </Container>
+    );
 };
 
 export default ShowMore;

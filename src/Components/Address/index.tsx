@@ -14,7 +14,7 @@ const Address = () => {
     //Modal Controller Create Form
     const [isOpen, setIsOpen] = React.useState(false);
     const toggleCreate = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(!isOpen);
     };
 
 
@@ -42,7 +42,7 @@ const Address = () => {
             </Modal>
 
         </ContentContainer>
-    )
+    );
 };
 
 export default Address;

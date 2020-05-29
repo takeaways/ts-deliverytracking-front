@@ -1,9 +1,9 @@
-import * as Redux from 'redux';
+import * as Redux from "redux";
 
 import address from "./Address";
 import count from "./Count";
 
-const rootReducer = Redux.combineReducers({ address,count});
+const rootReducer = Redux.combineReducers({address, count});
 
 export default rootReducer;
 

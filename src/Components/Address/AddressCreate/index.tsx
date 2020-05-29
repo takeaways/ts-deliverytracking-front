@@ -37,18 +37,18 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
     //event handlers
     const onSetReceiver = (e: React.ChangeEvent<HTMLInputElement>) => {
         _setReset();
-        setReceiver(e.target.value)
+        setReceiver(e.target.value);
     };
     const onSetZipCode = (e: React.ChangeEvent<HTMLInputElement>) => {
         _setReset();
-        setZipCode(e.target.value)
+        setZipCode(e.target.value);
     };
     const onSetAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
         _setReset();
-        setAddress(e.target.value)
+        setAddress(e.target.value);
     };
     const onSetDefault = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCheckDefault(e.target.checked)
+        setCheckDefault(e.target.checked);
     };
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -128,10 +128,10 @@ const AddressCreate: React.FC<AddressCreateProps> = ({onToggle}) => {
                 </Styles.FormDivider>
             </Styles.Footer>
         </Styles.Container>
-    )
+    );
 };
 
-export default AddressCreate
+export default AddressCreate;
 
 
 

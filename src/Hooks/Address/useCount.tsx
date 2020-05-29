@@ -1,7 +1,7 @@
-import * as Redux from 'react-redux';
+import * as Redux from "react-redux";
 import * as React from "react";
 
-import {RootState} from '../../Reducer';
+import {RootState} from "../../Reducer";
 
 
 const useCount = () => {

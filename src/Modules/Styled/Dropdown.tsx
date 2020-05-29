@@ -1,12 +1,12 @@
 import * as React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 import {useToggleLayer, anchor} from "react-laag";
 import Menubar from "./Menubar";
 
 export interface DropdownProps {
     /** 메뉴 목록 */
     items: ItemsProps[];
-    size?: 'small' | 'middle' | 'large';
+    size?: "small" | "middle" | "large";
     width?: number;
 }
 
@@ -27,7 +27,7 @@ const Dropdown: React.FC<DropdownProps> = ({items, children, size, width}) => {
     const [element, toggleLayerProps] = useToggleLayer(
         (props) => props.isOpen && (
             <div {...props.layerProps}>
-                <Menubar size={size ? size : 'small'} width={width ? width : 168}>
+                <Menubar size={size ? size : "small"} width={width ? width : 168}>
                     {items.map((item: ItemsProps, key: number) => {
                         return (
                             <button
@@ -51,7 +51,7 @@ const Dropdown: React.FC<DropdownProps> = ({items, children, size, width}) => {
                 // ? anchor.BOTTOM_RIGHT
                 // : anchor.BOTTOM_CENTER,
             },
-            closeOnOutsideClick: true,
+            closeOnOutsideClick: true
         });
 
     return (
@@ -61,7 +61,7 @@ const Dropdown: React.FC<DropdownProps> = ({items, children, size, width}) => {
                 <span className="icon" onClick={toggleLayerProps.close}>{children}</span>
             </div>
         </Container>
-    )
+    );
 };
 
 export default Dropdown;

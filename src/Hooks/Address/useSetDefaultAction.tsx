@@ -6,8 +6,8 @@ import {setDefault} from "../../Reducer/Address";
 const useSetDefaultAction = () => {
     const dispatch = Redux.useDispatch();
     return React.useCallback(({addressId}: { addressId: number }) => {
-        dispatch(setDefault(addressId))
-    }, [dispatch])
+        dispatch(setDefault(addressId));
+    }, [dispatch]);
 };
 
 export default useSetDefaultAction;

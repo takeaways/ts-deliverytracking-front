@@ -15,7 +15,7 @@ const AddressInfo = () => {
             <Styles.Content>{info.content}<a href={info.link}>내 후원현황 바로가기</a>
             </Styles.Content>
         </Styles.Container>
-    )
+    );
 };
 
-export default AddressInfo
+export default AddressInfo;

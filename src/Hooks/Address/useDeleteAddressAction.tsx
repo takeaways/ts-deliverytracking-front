@@ -6,8 +6,8 @@ import {deleteAddress} from "../../Reducer/Address";
 const useDeleteAddressAction = () => {
     const dispatch = Redux.useDispatch();
     return React.useCallback(({addressId}: { addressId: number }) => {
-        dispatch(deleteAddress(addressId))
-    }, [dispatch])
+        dispatch(deleteAddress(addressId));
+    }, [dispatch]);
 };
 
 export default useDeleteAddressAction;

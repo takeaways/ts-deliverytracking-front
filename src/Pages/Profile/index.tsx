@@ -12,6 +12,6 @@ const Profile = () => {
 
             </PageContainer>
         </>
-    )
+    );
 };
 export default Profile;
