@@ -20,7 +20,7 @@ const Container = styled.div`
   
   
   
-  @media screen and (max-width:768px){
+  @media screen and (min-width: 360px) and (max-width: 768px) {
     width: 684px;
   };
   
@@ -40,15 +40,15 @@ const Text = styled.span`
 `;
 
 interface ShowMoreProps {
-    onShowMore:()=>void
+  onShowMore: () => void
 }
-const ShowMore:React.FC<ShowMoreProps> = ({onShowMore}) => {
+const ShowMore: React.FC<ShowMoreProps> = ({ onShowMore }) => {
 
-    return (
-        <Container onClick={onShowMore}>
-            <Text>더보기</Text>
-        </Container>
-    )
+  return (
+    <Container onClick={onShowMore}>
+      <Text>더보기</Text>
+    </Container>
+  )
 };
 
 export default ShowMore;

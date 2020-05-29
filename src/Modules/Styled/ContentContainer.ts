@@ -5,7 +5,7 @@ const ContentContainer = styled.div`
 	padding-top: 60px;
 	box-sizing: border-box;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (min-width: 360px) and (max-width: 768px) {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;

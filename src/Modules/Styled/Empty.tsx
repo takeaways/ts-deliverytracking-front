@@ -14,7 +14,7 @@ const Container = styled.div`
   justify-content:center;
   align-items:center;
 
-@media screen and (max-width: 768px) {
+  @media screen and (min-width: 360px) and (max-width: 768px) {
 	width: 684px;
 }
 

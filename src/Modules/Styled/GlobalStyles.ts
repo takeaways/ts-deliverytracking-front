@@ -1,8 +1,8 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const font =
-    "'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Dotum, '돋움', Helvetica, sans-serif";
+	"'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', Dotum, '돋움', Helvetica, sans-serif";
 
 // prettier-ignore
 export const GlobalStyle = createGlobalStyle`
@@ -24,7 +24,15 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         overscroll-behavior-x: none;
+        @media screen and (min-width: 360px) and (max-width: 768px) {
+		/* flex-direction: column; */
+		/* justify-content: center; */
+		width: 768px;
+		/* align-items: center; */
+	
+	}
     }
+    
 
     body {
         line-height: 1;

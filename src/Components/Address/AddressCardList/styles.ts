@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-@media screen and (max-width: 768px) {
+	@media screen and (min-width: 360px) and (max-width: 768px) {
 		width: 684px;
 	}
 
 	@media screen and (max-width: 360px) {
 		width: 360px;
 	}
-
 `;
 export const List = styled.ul`
 	& > li:first-child .card:first-child {
@@ -17,12 +16,11 @@ export const List = styled.ul`
 	}
 `;
 export const Item = styled.li`
-    @media screen and (max-width: 768px) {
+	@media screen and (min-width: 360px) and (max-width: 768px) {
 		width: 684px;
 	}
 
 	@media screen and (max-width: 360px) {
 		width: 360px;
 	}
-
 `;

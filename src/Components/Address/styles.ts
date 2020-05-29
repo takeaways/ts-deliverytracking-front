@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	display: flex;	
-	
-	@media screen and (max-width: 768px) {
+	display: flex;
+
+	@media screen and (min-width: 360px) and (max-width: 768px) {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -31,7 +31,7 @@ export const ContentText = styled.span`
 	&:hover {
 		cursor: pointer;
 	}
-	@media screen and (max-width: 768px) {
+	@media screen and (min-width: 360px) and (max-width: 768px) {
 		left: calc(100% - 40px);
 	}
 `;

@@ -7,15 +7,8 @@ html,
 body,
 #root {
 	height: 100%;
+	width: 100%;
 	background-color: #f6f7fa;
-
-	@media screen and (max-width: 768px) {
-		width: 684px;
-	}
-
-	@media screen and (max-width: 360px) {
-		width: 360px;
-	}
 }
 
 :root {

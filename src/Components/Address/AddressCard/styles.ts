@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 	width: 660px;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (min-width: 360px) and (max-width: 768px) {
 		width: 684px;
 	}
 
@@ -71,11 +71,11 @@ export const CardSetBtn = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
-	& svg{
-	width: 26px;
-	height: 26px;
-	border-radius: 50%;
+
+	& svg {
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
 	}
 
 	&:hover {
