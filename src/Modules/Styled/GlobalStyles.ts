@@ -24,13 +24,13 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         overscroll-behavior-x: none;
-        /* @media screen and (min-width: 360px) and (max-width: 768px) {
-		flex-direction: column;
-		justify-content: center;
-		width: 768px;
-		align-items: center;
-	
-	    } */
+        @media screen and (min-width: 360px) and (max-width: 768px) {
+            width:768px;
+	    }
+
+        @media screen and (max-width: 360px) {
+            width:360px;
+        }
     }
     
 
