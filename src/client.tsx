@@ -3,22 +3,23 @@ import * as ReactDom from 'react-dom';
 import * as ReactRedux from 'react-redux';
 import * as Redux from "redux";
 
-import {composeWithDevTools} from 'redux-devtools-extension';
-import {ModalProvider} from 'styled-react-modal';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { ModalProvider } from 'styled-react-modal';
 
 import GoogleFontLoader from 'react-google-font-loader';
-import {GlobalStyle} from './Modules/Styled/GlobalStyles';
+import { GlobalStyle } from './Modules/Styled/GlobalStyles';
 
 import rootReducer from "./Reducer";
 
 
-import {hot} from 'react-hot-loader/root';
+import { hot } from 'react-hot-loader/root';
 
 const store = Redux.createStore(rootReducer, composeWithDevTools());
 
 
 import './index.css';
 import App from './App';
+import ModalBackground from './Modules/Styled/ModalBackground';
 
 const Hot = hot(App);
 
@@ -32,10 +33,10 @@ ReactDom.render(
                 },
             ]}
         />
-        <GlobalStyle/>
+        <GlobalStyle />
         <ReactRedux.Provider store={store}>
-            <ModalProvider>
-                <Hot/>
+            <ModalProvider backgroundComponent={ModalBackground}>
+                <Hot />
             </ModalProvider>
         </ReactRedux.Provider>
     </>
