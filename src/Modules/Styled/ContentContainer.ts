@@ -5,15 +5,14 @@ const ContentContainer = styled.div`
 	padding-top: 60px;
 	box-sizing: border-box;
 
-	@media screen and (min-width: 360px) and (max-width: 768px) {
+	@media screen and (max-width: 768px) {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
 	@media screen and (max-width: 360px) {
-		/* padding: 0 20px; */
-		padding: 0;
+		padding: 0 20px;
 		padding-top: 60px;
 	}
 `;
