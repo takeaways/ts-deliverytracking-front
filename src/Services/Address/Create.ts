@@ -8,7 +8,7 @@ interface CreateProps extends AddressType {
 	default: boolean;
 }
 
-const REACT_APP_API_PATH = "http://localhost:7080";
+const REACT_APP_API_PATH = 'https://geoniljang.com:7080';
 
 export const Create = async (addressInfo: CreateProps): Promise<any> => {
 	try {

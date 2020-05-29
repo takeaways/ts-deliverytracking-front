@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import {MdErrorOutline} from "react-icons/md"
+import { MdErrorOutline } from "react-icons/md"
 
 const Container = styled.div`
   width: 660px;
@@ -14,13 +14,13 @@ const Container = styled.div`
   justify-content:center;
   align-items:center;
 
-  @media screen and (max-width: 360px) {
-		width: 360px;
-	}
-	
-	@media screen and (max-width: 768px) {
-		width: 684px;
-	}
+@media screen and (max-width: 768px) {
+	width: 684px;
+}
+
+@media screen and (max-width: 360px) {
+	width: 360px;
+}
   
 `
 const Icon = styled.span`
@@ -43,10 +43,10 @@ const Text = styled.span`
 `
 
 
-const Empty: React.FC<{ message: string }> = ({message}) => {
+const Empty: React.FC<{ message: string }> = ({ message }) => {
     return (
         <Container>
-            <Icon><MdErrorOutline/></Icon>
+            <Icon><MdErrorOutline /></Icon>
             <Text>{message}</Text>
         </Container>
     )
