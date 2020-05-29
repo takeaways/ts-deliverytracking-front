@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	@media screen and (min-width: 360px) and (max-width: 768px) {
+	@media screen and (max-width: 768px) {
 		width: 684px;
 	}
 
@@ -14,17 +14,14 @@ export const List = styled.ul`
 		border-top-left-radius: 8px;
 		border-top-right-radius: 8px;
 	}
-	
+
 	& > li:last-child .card:last-child {
 		border-bottom-left-radius: 8px;
 		border-bottom-right-radius: 8px;
 	}
-	
-	
-	
 `;
 export const Item = styled.li`
-	@media screen and (min-width: 360px) and (max-width: 768px) {
+	@media screen and (max-width: 768px) {
 		width: 684px;
 	}
 
