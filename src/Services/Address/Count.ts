@@ -1,6 +1,6 @@
 import Http from '../../Modules/Http';
 
-const REACT_APP_API_PATH = 'https://geoniljang.com:7080';
+const REACT_APP_API_PATH = 'https://teamback.geoniljang.com';
 export const Count = async (): Promise<any> => {
 	try {
 		const result: any = await Http.get(`${REACT_APP_API_PATH}/address/count`);
