@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const PageContainer = styled.div`
 	padding-top: 50px;
-	width: 1024px; 
+	width: 1024px;
 	margin: 0 auto;
 
-	@media screen and (min-width: 360px) and (max-width: 768px) {
+	@media screen and (max-width: 768px) {
 		flex-direction: column;
 		justify-content: center;
 		width: 768px;
