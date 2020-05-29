@@ -20,7 +20,7 @@ import DeleteConfirm from "../../../Modules/Styled/ModalDelete";
 import Empty from "../../../Modules/Styled/Empty";
 import ShowMore from "../../../Modules/Styled/ShowMore";
 import useGetAddressAction from "../../../Hooks/Address/useGetAddressAction";
-import {AddressType} from "../../../Constants/Types/address";
+import { AddressType } from "../../../Constants/Types/address";
 import useCount from "../../../Hooks/Address/useCount";
 import useCountDown from "../../../Hooks/Address/useCountDown";
 
@@ -67,9 +67,9 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
     const onConfirm = async () => {
         try {
             toggleDelete();
-            const result = await AddressService.Delete({addressId: addressId!});
+            const result = await AddressService.Delete({ addressId: addressId! });
             if (addressId) {
-                onDeleteAddress({addressId});
+                onDeleteAddress({ addressId });
             }
         } catch (e) {
             history.push("/address");
@@ -78,16 +78,16 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
     };
     const onShowMore = async () => {
         const listLength = (listLengthRef.current as HTMLUListElement).childElementCount;
-        const result = await AddressService.Get({offset:listLength});
+        const result = await AddressService.Get({ offset: listLength });
         onGet(result);
 
     };
     const handleItemMenu = async (type: string, id: number) => {
         switch (type) {
             case "setDefault": {
-                const result = await AddressService.Set({addressId: id});
+                const result = await AddressService.Set({ addressId: id });
                 if (result) {
-                    onSetDefault({addressId: result});
+                    onSetDefault({ addressId: result });
                 }
                 break;
             }
@@ -126,19 +126,20 @@ const AddressCardList: React.FC<AddressCardListProps> = () => {
                                 />
                             </Styles.Item>
                         ))
-                    ) : (<Empty message={"등록된 배송지가 없습니다."}/>)
+                    ) : (<Empty message={"등록된 배송지가 없습니다."} />)
                     }
-                    {more && <ShowMore onShowMore={onShowMore}/>}
+
                 </Styles.List>
+                {more && <ShowMore onShowMore={onShowMore} />}
             </Styles.Container>
             <Modal
                 isOpen={isDelete}
                 onBackgroundClick={toggleDelete}
                 onEscapeKeydown={toggleDelete}
             >
-                <DeleteConfirm message={"정말 삭제하시겠니까?"} onCancel={toggleDelete} onConfirm={onConfirm}/>
+                <DeleteConfirm message={"정말 삭제하시겠니까?"} onCancel={toggleDelete} onConfirm={onConfirm} />
             </Modal>
-            {change && <Toast message={"기본 배송지가 변경되었습니다."} onClose={onClose}/>}
+            {change && <Toast message={"기본 배송지가 변경되었습니다."} onClose={onClose} />}
         </>
     )
 };
