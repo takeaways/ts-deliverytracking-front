@@ -17,7 +17,7 @@
 		"@types/styled-react-modal": "^1.2.0",
 		"axios": "^0.19.2",
 		"dotenv": "^8.2.0",
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-google-font-loader": "^1.1.0",
